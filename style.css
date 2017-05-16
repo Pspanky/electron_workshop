@@ -44,6 +44,7 @@ body {
 	max-width: 60vw;
 }
 
+<<<<<<< HEAD
 #bulletin-board {
 	height: 20vh;
 	width: 100%;
@@ -53,4 +54,19 @@ body {
 button {
 	-webkit-app-region: no-drag;
 	color: blue;
+=======
+#secretSection{
+	display: flex;
+	justify-content: space-around;
+}
+
+#secret_puppy{
+	display: none;
+}
+
+.secret_text{
+	color: red;
+	font-size: 25px;
+	font-family: sans-serif;
+>>>>>>> a229c326a8f59e3d6d1496a4fe23f0e7402d66bf
 }

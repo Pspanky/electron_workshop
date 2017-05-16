@@ -5,6 +5,19 @@
 const remote = require('electron').remote;
 
 let axios = require('axios');
+const ipc = require('electron').ipcRenderer
+
+ipc.on("showSurprise", (event, data) => {
+	if (document.getElementById('secretSection').style.display == "none"){
+			document.getElementById('secretSection').style.display = "flex";
+	} else {
+		document.getElementById('secretSection').style.display = "none";
+	}
+})
+
+ipc.on("hide", (event) => {
+	document.getElementById('secretSection').style.display="none"
+})
 
 const apiUrl = (term) => {
 	return `http://api.giphy.com/v1/gifs/search?q=${term}&api_key=dc6zaTOxFJmzC`;
