@@ -11,7 +11,7 @@ const {app, electron, globalShortcut, BrowserWindow} = require('electron')
 
 const path = require('path')
 const url = require('url')
-const globalShortcut = electron.globalShortcut
+// const globalShortcut = electron.globalShortcut
 const ipc = require('electron').ipcMain
 
 global.sPressed = false;
@@ -47,17 +47,17 @@ function createWindow (framing, transparency) {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', function () {
-  createWindow();
-  // Register a 'CommandOrControl+X' shortcut listener.
-  const ret = globalShortcut.register('CommandOrControl+P', () => {
-    mainWindow.webContents.send('showSurprise')
-  });
-
-  if (!ret) {
-    console.log('registration failed');
-  }
-})
+// app.on('ready', function () {
+//   createWindow();
+//   // Register a 'CommandOrControl+X' shortcut listener.
+//   const ret = globalShortcut.register('CommandOrControl+P', () => {
+//     mainWindow.webContents.send('showSurprise')
+//   });
+//
+//   if (!ret) {
+//     console.log('registration failed');
+//   }
+// })
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
@@ -78,6 +78,16 @@ app.on('activate', function () {
 
 
 app.on('ready', () => {
+  createWindow();
+  // Register a 'CommandOrControl+X' shortcut listener.
+  const ret0 = globalShortcut.register('CommandOrControl+P', () => {
+    mainWindow.webContents.send('showSurprise')
+  });
+
+  if (!ret0) {
+    console.log('registration failed');
+  }
+
   // Register a 'CommandOrControl+X' shortcut listener.
   const ret = globalShortcut.register('CommandOrControl+Q', () => {
     console.log('CommandOrControl+Q is pressed')
