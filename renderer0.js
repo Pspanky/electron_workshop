@@ -2,15 +2,18 @@
 // be executed in the renderer process for that window.
 // All of the Node.js APIs are available in this process.
 
-const remote = require('electron').remote;
-
 let axios = require('axios');
+let storedGIFs = [];
 
 const apiUrl = (term) => {
 	return `http://api.giphy.com/v1/gifs/search?q=${term}&api_key=dc6zaTOxFJmzC`;
 };
 
-// getGifURL();
+const getGifURL = () =>{
+	storedGIFs.push(document.getElementById('img-show')
+	.getattribute('src'));
+	console.log("in gifurl")
+}
 
 let searchBar = document.getElementById('search');
 searchBar.onkeypress = (e) => {
@@ -20,6 +23,7 @@ searchBar.onkeypress = (e) => {
 		if (searchBar.value === "")
 			return;
 
+		// loading
 		document.getElementById('img-show')
 				.setAttribute('src', 'imgs/loading.gif');
 
@@ -34,25 +38,3 @@ searchBar.onkeypress = (e) => {
 			});
 	}
 };
-
-
-//The following is adapted from: http://stackoverflow.com/questions/31171597/atom-electron-close-the-window-with-javascript
-
-  document.getElementById("min-btn").addEventListener("click", function (e) {
-       var win = remote.getCurrentWindow();
-       win.minimize();
-  });
-
-  document.getElementById("max-btn").addEventListener("click", function (e) {
-       var win = remote.getCurrentWindow();
-       if (!win.isMaximized()) {
-           win.maximize();
-       } else {
-           win.unmaximize();
-       }
-  });
-
-  document.getElementById("close-btn").addEventListener("click", function (e) {
-       var win = remote.getCurrentWindow();
-       win.close();
-  });

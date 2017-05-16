@@ -5,6 +5,7 @@ body {
 	padding: 0;
 }
 
+
 #search {
 	height: 4vh;
 	width: 80vw;
@@ -41,4 +42,15 @@ body {
 #img-show {
 	max-height: 65vh;
 	max-width: 60vw;
+}
+
+#bulletin-board {
+	height: 20vh;
+	width: 100%;
+	background-color: red;
+}
+
+button {
+	-webkit-app-region: no-drag;
+	color: blue;
 }
