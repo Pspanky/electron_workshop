@@ -89,8 +89,8 @@ app.on('ready', () => {
   }
 
   // Register a 'CommandOrControl+X' shortcut listener.
-  const ret = globalShortcut.register('CommandOrControl+Q', () => {
-    console.log('CommandOrControl+Q is pressed')
+  const ret = globalShortcut.register('CommandOrControl+W', () => {
+    console.log('CommandOrControl+W is pressed')
     app.quit()
     // gif.getGifURL();
   })
@@ -128,12 +128,12 @@ app.on('ready', () => {
   // }
 
   // Check whether a shortcut is registered.
-  console.log(globalShortcut.isRegistered('CommandOrControl+Q'))
-  console.log(globalShortcut.isRegistered('CommandOrControl+H'))
-  console.log(globalShortcut.isRegistered('CommandOrControl+S'))
-  console.log(globalShortcut.isRegistered('CommandOrControl+N'))
-  console.log(globalShortcut.isRegistered('CommandOrControl+T'))
-  console.log(globalShortcut.isRegistered('CommandOrControl+F'))
+  // console.log(globalShortcut.isRegistered('CommandOrControl+Q'))
+  // console.log(globalShortcut.isRegistered('CommandOrControl+H'))
+  // console.log(globalShortcut.isRegistered('CommandOrControl+S'))
+  // console.log(globalShortcut.isRegistered('CommandOrControl+N'))
+  // console.log(globalShortcut.isRegistered('CommandOrControl+T'))
+  // console.log(globalShortcut.isRegistered('CommandOrControl+F'))
 
 })
 
